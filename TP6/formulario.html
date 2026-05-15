@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <title id="titulo-proyecto">Gestor de Tareas</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
 
 <body>
+    <h1 id="titulo-proyecto">Gestor de Tareas</h1>
+
+    <div>Ingrese nombre de la tarea:</div>
+    <input id="nombreTarea"></input>
+    
     <form id="formulario-tarea">
         <select id="prioridad">
             <option id="baja">Baja</option>
-            <option id="baja">Media</option>
-            <option id="baja">Alta</option>
+            <option id="media">Media</option>
+            <option id="alta">Alta</option>
         </select>
         <button type="button" id="btn-agregar">Agregar</button>
     </form>
@@ -25,7 +32,8 @@
     </tbody>
 </table>
 
-
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 
