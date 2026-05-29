@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Repaso - Lenguajes III</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+
+    <div class="container my-5">
+        <header class="text-center mb-5">
+            <h1 class="fw-bold text-primary">Práctica de Repaso</h1>
+            <p class="text-muted">Desafíos JavaScript + HTML &mdash; Año 2026</p>
+        </header>
+
+        <ul class="nav nav-tabs justify-content-center mb-4" id="tpTabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" id="d1-tab" data-bs-toggle="tab" data-bs-target="#desafio1" type="button">Desafío 1: Académico</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="d2-tab" data-bs-toggle="tab" data-bs-target="#desafio2" type="button">Desafío 2: Conversor</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="d3-tab" data-bs-toggle="tab" data-bs-target="#desafio3" type="button">Desafío 3: Números</button>
+            </li>
+        </ul>
+
+        <div class="tab-content bg-white p-4 rounded shadow-sm">
+            
+            <div class="tab-pane fade show active" id="desafio1">
+                <h3 class="mb-4 text-secondary">Calculadora de Rendimiento Académico</h3>
+                <div class="row g-3 align-items-center mb-4">
+                    <div class="col-md-5">
+                        <label for="materia" class="form-label">Materia</label>
+                        <input type="text" id="materia" class="form-control" placeholder="Ej: Programación">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nota" class="form-label">Nota (0 al 10)</label>
+                        <input type="number" id="nota" class="form-control" min="0" max="10" step="0.1">
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end pt-4">
+                        <button class="btn btn-success w-100" onclick="agregarMateria()">Agregar materia</button>
+                    </div>
+                </div>
+                
+                <div id="error-d1" class="text-danger small mb-3 fw-bold"></div>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <h5>Materias Registradas</h5>
+                        <div id="lista" class="table-responsive text-muted small">Ninguna materia registrada aún.</div>
+                    </div>
+                    <div class="col-md-5">
+                        <h5>Estadísticas Generales</h5>
+                        <div id="resumen" class="border p-3 rounded bg-light small">No hay datos suficientes.</div>
+                        <button class="btn btn-outline-danger btn-sm mt-3 w-100" onclick="limpiarTodo()">Limpiar todo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="desafio2">
+                <h3 class="mb-4 text-secondary">Conversor de Unidades con Menú</h3>
+                <div class="row g-3 align-items-center mb-4">
+                    <div class="col-md-5">
+                        <label for="tipoConversion" class="form-label">Tipo de Conversión</label>
+                        <select id="tipoConversion" class="form-select">
+                            <option value="1">1. Kilómetros → Millas</option>
+                            <option value="2">2. Millas → Kilómetros</option>
+                            <option value="3">3. Kilogramos → Libras</option>
+                            <option value="4">4. Libras → Kilogramos</option>
+                            <option value="5">5. Celsius → Fahrenheit</option>
+                            <option value="6">6. Fahrenheit → Celsius</option>
+                            <option value="7">7. Metros → Pies</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="valor" class="form-label">Valor a convertir</label>
+                        <input type="number" id="valor" class="form-control" placeholder="Ingrese el valor">
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end pt-4">
+                        <button class="btn btn-primary w-100" onclick="convertir()">Convertir</button>
+                    </div>
+                </div>
+
+                <div id="error-d2" class="text-danger small mb-3 fw-bold"></div>
+                
+                <div class="alert alert-info fw-bold text-center" id="resultado">El resultado aparecerá aquí.</div>
+
+                <div class="mt-4">
+                    <h5>Historial de Conversiones</h5>
+                    <ul id="historialLista" class="list-group list-group-flush small"></ul>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="desafio3">
+                <h3 class="mb-4 text-secondary">Registrador de Números con Estadísticas</h3>
+                <div class="row g-3 align-items-center mb-4">
+                    <div class="col-md-6">
+                        <label for="numero" class="form-label">Ingresar Número</label>
+                        <input type="number" id="numero" class="form-control" placeholder="Ej: -5, 12, 0">
+                        <div id="error-d3" class="text-danger small mt-1 fw-bold"></div>
+                    </div>
+                    <div class="col-md-6 d-flex gap-2 align-items-end h-100 pt-4">
+                        <button class="btn btn-dark col" onclick="agregarNumero()">Agregar</button>
+                        <button class="btn btn-outline-secondary col" onclick="tablaMultiplicar()">Ver Tabla</button>
+                        <button class="btn btn-danger col" onclick="reiniciar()">Reiniciar</button>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-light h-100">
+                            <h6>Lista de Números</h6>
+                            <div id="listaNumeros" class="small text-break">-</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-light h-100">
+                            <h6>Estadísticas</h6>
+                            <div id="estadisticas" class="small">No hay números ingresados.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-light h-100">
+                            <h6>Tabla de Multiplicar</h6>
+                            <div id="tabla" class="small text-monospace">Seleccione "Ver Tabla"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

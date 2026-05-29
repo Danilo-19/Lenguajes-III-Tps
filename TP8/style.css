@@ -1,0 +1,15 @@
+/* Estilos sencillos para el TP de Repaso */
+.tab-content {
+    border-top: none;
+}
+
+/* Tipografía de código fija para las tablas de multiplicar */
+#tabla {
+    font-family: monospace;
+    white-space: pre-line;
+}
+
+/* Transición suave para las alertas del validador en rojo */
+.text-danger {
+    transition: all 0.3s ease;
+}
