@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Personajes - Rick and Morty</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="rm-header text-center py-5">
+        <div class="portal-ring mx-auto mb-3"></div>
+        <h1 class="titulo-principal">Buscador de Personajes</h1>
+        <p class="subtitulo">Rick and Morty Universe &mdash; API Explorer</p>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6">
+                <div class="input-group shadow-sm">
+                    <input
+                        type="text"
+                        id="busqueda"
+                        class="form-control input-busqueda"
+                        placeholder="Ingresá un nombre o un ID..."
+                        aria-label="Buscar personaje"
+                    >
+                    <button class="btn btn-buscar" id="btnBuscar">Buscar</button>
+                </div>
+                <p class="hint-text mt-2 text-center">
+                    Ejemplo: <strong>Rick</strong> &nbsp;|&nbsp; <strong>1</strong>
+                </p>
+            </div>
+        </div>
+
+        <div id="resultado" class="row justify-content-center"></div>
+    </main>
+
+    <footer class="rm-footer text-center py-3">
+        <small>Datos provistos por <a href="https://rickandmortyapi.com" target="_blank">rickandmortyapi.com</a></small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

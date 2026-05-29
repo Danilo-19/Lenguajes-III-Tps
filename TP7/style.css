@@ -1,0 +1,36 @@
+/* --- Estilos base para la Card del Personaje --- */
+.personaje-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 320px;
+    margin: 0 auto;
+    /* Borde superior por defecto (gris) */
+    border-top: 6px solid #868e96; 
+    transition: transform 0.2s ease;
+}
+
+/* Efecto levante tranqui al pasar el mouse */
+.personaje-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ajuste para que la foto no se deforme y calce bien */
+.card-img-personaje {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* --- Cambios de color dinámicos según el estado (Punto 5 de la consigna) --- */
+.personaje-card.alive   { border-top-color: #28a745; } /* Verde */
+.personaje-card.dead    { border-top-color: #dc3545; } /* Rojo */
+.personaje-card.unknown { border-top-color: #868e96; } /* Gris */
+
+/* Estilos simples para los mensajes de error */
+.msg-box {
+    text-align: center;
+    padding: 2rem;
+    color: #495057;
+}
