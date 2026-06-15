@@ -1,68 +1,88 @@
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a24; /* Fondo oscuro tipo RPG */
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-.pregunta-box {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+h1 {
+    color: #f39c12; /* Color dorado aventurero */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#preguntas-container {
+    background-color: #2b2b36;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    min-height: 120px;
 }
 
 .pregunta-box label {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 input, select {
-    padding: 8px;
     width: 100%;
-    max-width: 300px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1e1e24;
+    color: #fff;
+    border: 2px solid #4a4a5a;
+    border-radius: 6px;
     outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+input:focus, select:focus {
+    border-color: #f39c12;
+    box-shadow: 0 0 8px rgba(243, 156, 18, 0.5);
+}
 
-.borde-gris { border-color: gray; }
-.borde-rojo { border-color: red; }
-.borde-verde { border-color: green; }
+/* Clases dinámicas de estado con sombras para que resalten más */
+.borde-gris { 
+    border-color: #888 !important; 
+}
+.borde-rojo { 
+    border-color: #e74c3c !important; 
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.4); 
+}
+.borde-verde { 
+    border-color: #2ecc71 !important; 
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.4); 
+}
 
 .error-msg {
-    color: red;
-    font-size: 13px;
-    margin-top: 5px;
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: bold;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #controles {
-    margin-top: 20px;
-}
-
-button {
-    padding: 10px 15px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-}
-
-.exito {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #d4edda;
-    color: #155724;
-    border: 2px solid #c3e6cb;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 18px;
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
 }
