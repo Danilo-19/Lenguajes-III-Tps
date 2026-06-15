@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+.pregunta-box {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pregunta-box label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+
+.borde-gris { border-color: gray; }
+.borde-rojo { border-color: red; }
+.borde-verde { border-color: green; }
+
+.error-msg {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#controles {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.exito {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}

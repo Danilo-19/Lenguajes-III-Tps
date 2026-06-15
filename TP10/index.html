@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>La Gran Alianza de Aventureros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Registro de Aventurero</h1>
+
+    <div id="preguntas-container">
+        <div id="q1" class="pregunta-box">
+            <label>1. ¿Cuál es el nombre de tu personaje?</label>
+            <input type="text" id="in1">
+            <div id="err1" class="error-msg"></div>
+        </div>
+
+        <div id="q2" class="pregunta-box hidden">
+            <label>2. ¿Cuál es tu raza?</label>
+            <select id="in2">
+                <option value="">Seleccione...</option>
+                <option value="Humano">Humano</option>
+                <option value="Elfo">Elfo</option>
+                <option value="Enano">Enano</option>
+                <option value="Orco">Orco</option>
+            </select>
+            <div id="err2" class="error-msg"></div>
+        </div>
+
+        <div id="q3" class="pregunta-box hidden">
+            <label>3. ¿Cuál es tu clase?</label>
+            <select id="in3">
+                <option value="">Seleccione...</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Mago">Mago</option>
+                <option value="Arquero">Arquero</option>
+                <option value="Sanador">Sanador</option>
+            </select>
+            <div id="err3" class="error-msg"></div>
+        </div>
+
+        <div id="q4" class="pregunta-box hidden">
+            <label>4. ¿Cuál es el nombre de tu reino de origen?</label>
+            <input type="text" id="in4">
+            <div id="err4" class="error-msg"></div>
+        </div>
+
+        <div id="q5" class="pregunta-box hidden">
+            <label>5. ¿Cuál es el nombre de tu arma principal?</label>
+            <input type="text" id="in5">
+            <div id="err5" class="error-msg"></div>
+        </div>
+
+        <div id="q6" class="pregunta-box hidden">
+            <label>6. ¿Cuál es tu número de registro de aventurero?</label>
+            <input type="text" id="in6">
+            <div id="err6" class="error-msg"></div>
+        </div>
+
+        <div id="q7" class="pregunta-box hidden">
+            <label>7. ¿Cuántos puntos de vida tenés?</label>
+            <input type="text" id="in7">
+            <div id="err7" class="error-msg"></div>
+        </div>
+
+        <div id="q8" class="pregunta-box hidden">
+            <label>8. ¿Cuántas batallas ganaste?</label>
+            <input type="text" id="in8">
+            <div id="err8" class="error-msg"></div>
+        </div>
+
+        <div id="q9" class="pregunta-box hidden">
+            <label>9. ¿Cuándo nació tu personaje?</label>
+            <input type="date" id="in9">
+            <div id="err9" class="error-msg"></div>
+        </div>
+
+        <div id="q10" class="pregunta-box hidden">
+            <label>10. ¿Cuándo comenzaste tu aventura?</label>
+            <input type="date" id="in10">
+            <div id="err10" class="error-msg"></div>
+        </div>
+    </div>
+
+    <div id="controles">
+        <button id="btnRetroceder" onclick="retroceder()" disabled>Retroceder</button>
+        <button id="btnSiguiente" onclick="siguiente()">Siguiente</button>
+        <button id="btnReiniciar" onclick="reiniciar()">Reiniciar</button>
+    </div>
+
+    <div id="mensaje-exito" class="hidden exito"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
