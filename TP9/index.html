@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción a Torneo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Registro para Torneo de Videojuegos</h1>
+
+        <div class="card shadow-sm mb-5">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">1. Datos del Jugador</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Nickname</label>
+                    <input type="text" id="nickname" class="form-control" placeholder="Ej: Player123">
+                    <div id="error-nickname" class="text-danger small mt-1 fw-bold"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Edad</label>
+                    <input type="number" id="edad" class="form-control" placeholder="Ej: 18">
+                    <div id="error-edad" class="text-danger small mt-1 fw-bold"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Código de Equipo</label>
+                    <input type="text" id="codigo" class="form-control" placeholder="4 dígitos. Ej: 4092">
+                    <div id="error-codigo" class="text-danger small mt-1 fw-bold"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">2. Selección de Juego</h5>
+            </div>
+            <div class="card-body text-center">
+                <div id="error-juego" class="text-danger small mb-3 fw-bold"></div>
+                
+                <div class="row g-3 justify-content-center" id="grilla-juegos">
+                    
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="tarjeta p-2 border rounded" onclick="seleccionarJuego(this, 'Minecraft')">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft" class="img-fluid rounded mb-2">
+                            <p class="mb-0 fw-bold">Minecraft</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="tarjeta p-2 border rounded" onclick="seleccionarJuego(this, 'Fortnite')">
+                            <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-1920x1080-1920x1080-af1f5c4c4b41.jpg" alt="Fortnite" class="img-fluid rounded mb-2">
+                            <p class="mb-0 fw-bold">Fortnite</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="tarjeta p-2 border rounded" onclick="seleccionarJuego(this, 'Valorant')">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Valorant_cover.jpg" alt="Valorant" class="img-fluid rounded mb-2">
+                            <p class="mb-0 fw-bold">Valorant</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="tarjeta p-2 border rounded" onclick="seleccionarJuego(this, 'FIFA 25')">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/f/f5/EA_Sports_FC_25_cover.jpg" alt="FIFA 25" class="img-fluid rounded mb-2">
+                            <p class="mb-0 fw-bold">FIFA 25</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="tarjeta p-2 border rounded" onclick="seleccionarJuego(this, 'Among Us')">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/9/93/Among_Us_cover_art.jpg" alt="Among Us" class="img-fluid rounded mb-2">
+                            <p class="mb-0 fw-bold">Among Us</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="tarjeta p-2 border rounded" onclick="seleccionarJuego(this, 'Rocket League')">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Rocket_League_coverart.jpg" alt="Rocket League" class="img-fluid rounded mb-2">
+                            <p class="mb-0 fw-bold">Rocket League</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-success btn-lg mt-4 px-5" onclick="registrarJugador()">Registrar</button>
+            </div>
+        </div>
+
+        <div id="seccion-preparacion" class="oculto text-center mt-5">
+            <h3 class="text-success mb-3">¡Registro exitoso!</h3>
+            <button class="btn btn-warning btn-lg mb-4" onclick="iniciarPreparacion()">Comenzar Preparación</button>
+            
+            <div id="resultados-preparacion" class="bg-white p-4 rounded shadow-sm border text-start mx-auto" style="max-width: 600px; display: none;">
+                </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

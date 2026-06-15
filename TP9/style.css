@@ -1,0 +1,32 @@
+
+.tarjeta {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+}
+
+
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.tarjeta img {
+    height: 140px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.seleccionado {
+    border: 3px solid #0d6efd !important; 
+    background-color: #e9ecef;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+
+.oculto {
+    display: none;
+}
